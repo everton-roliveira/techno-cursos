@@ -15,4 +15,21 @@ export default {
 };
 </script>
 <style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #234;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #234;
+}
 </style>
