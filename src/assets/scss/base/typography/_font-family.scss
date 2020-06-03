@@ -4,8 +4,8 @@
  * .title { @include font-family('01'); }
  */
 $font-families: (
-  "01": "Avenir",
-  "02": "Helvetica, Arial, sans-serif",
+  "primary": "Roboto",
+  "secondary": "Helvetica, Arial, sans-serif",
   monospace: monospace,
 );
 
