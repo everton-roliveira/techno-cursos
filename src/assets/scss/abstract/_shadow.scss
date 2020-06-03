@@ -1,0 +1,32 @@
+/**
+ * Shadows
+ * Getter exemple:
+ * .card { @extend %elevation-z6; }
+ */
+
+/* 
+Suggest by Dextra:
+$elevations: (
+  z0: '0px 0px 0px 0px',
+  z1: '0px 2px 8px'
+);
+*/
+
+$elevations: (
+  z0: "0px 0px 0px 0px",
+  z1: "0px 2px 1px 0px",
+);
+
+$default-color: rgba(color(neutral, black), opacity(shadow));
+
+%elevation {
+  @each $name, $elevation in $elevations {
+    &-#{$name} {
+      box-shadow: #{$elevation} #{$default-color};
+    }
+  }
+}
+
+@mixin elevation($elevation, $color: $default-color) {
+  box-shadow: #{map-get($elevations, $elevation)} #{$color};
+}
