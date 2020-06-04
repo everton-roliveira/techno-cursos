@@ -2,7 +2,9 @@
   <div>
     <h1>Cursos</h1>
     <page-loading v-if="loading"></page-loading>
-    <div v-if="data">{{data}}</div>
+    <transition>
+      <div v-if="data">{{data}}</div>
+    </transition>
   </div>
 </template>
 
