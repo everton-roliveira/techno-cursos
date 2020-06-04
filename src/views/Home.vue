@@ -2,7 +2,7 @@
   <div>
     <h1>Home</h1>
     <page-loading v-if="loading"></page-loading>
-    <div v-else>{{data}}</div>
+    <div v-if="data">{{data}}</div>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div>
     <h1>Cursos</h1>
     <page-loading v-if="loading"></page-loading>
-    <div v-else>{{data}}</div>
+    <div v-if="data">{{data}}</div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: "Courses",
   mixins: [fetchData],
   created() {
-    this.fetchData("/cursos");
+    this.fetchData("/courses");
   }
 };
 </script>
