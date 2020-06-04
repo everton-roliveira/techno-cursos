@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TheHeader />
-    <router-view></router-view>
+    <router-view class="container"></router-view>
   </div>
 </template>
 
@@ -20,13 +20,18 @@ body {
   margin: 0;
   padding: 0;
   color: color(brand, secondary);
-}
-a {
-  @include font-weight(bold);
-  text-decoration: none;
-  color: color(brand, secondary);
-  &.router-link-active {
-    color: color(brand, primary);
+  a {
+    @include font-weight(bold);
+    text-decoration: none;
+    color: color(brand, secondary);
+    &.router-link-active {
+      color: color(brand, primary);
+    }
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
   }
 }
 </style>
