@@ -33,5 +33,27 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 400px);
+    grid-gap: 30px;
+
+    @media screen and(max-width: 600px) {
+      display: block;
+    }
+  }
+
+  .header-page {
+    margin-bottom: 40px;
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    &__description {
+      @include font-weight(bold);
+      font-size: 1rem;
+    }
+  }
 }
 </style>

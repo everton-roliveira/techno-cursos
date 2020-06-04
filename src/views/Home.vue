@@ -4,15 +4,17 @@
     <transition>
       <div v-if="data" class="content">
         <div>
-          <h1>Sobre a {{data.title}}</h1>
-          <p>{{data.description}}</p>
-          <router-link tag="button" class="btn" to="/cursos">Cursos</router-link>
-          <div>
+          <header class="header-page">
+            <h1 class="header-page__title">Sobre a {{data.title}}</h1>
+            <p class="header-page__description">{{data.description}}</p>
+          </header>
+          <router-link tag="button" class="btn btn__big" to="/cursos">Cursos</router-link>
+          <div class="ratings">
             <h2>Avaliações</h2>
             <ul>
-              <li v-for="rating in data.ratings" :key="rating.id">
-                <p>{{rating.name}}</p>
-                <p>{{rating.description}}</p>
+              <li class="ratings__rating" v-for="rating in data.ratings" :key="rating.id">
+                <p class="ratings__rating__name">{{rating.name}}</p>
+                <p class="ratings__rating__description">{{rating.description}}</p>
               </li>
             </ul>
           </div>
@@ -34,3 +36,20 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.btn {
+  margin-bottom: 20px;
+}
+
+.ratings {
+  &__rating {
+    margin-bottom: 20px;
+    &__name {
+      @include font-weight(bold);
+    }
+    &__description {
+      font-style: italic;
+    }
+  }
+}
+</style>
