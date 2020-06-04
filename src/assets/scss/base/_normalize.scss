@@ -52,7 +52,6 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0;
 }
 
 /* Grouping content
@@ -161,6 +160,7 @@ sup {
 
 img {
   border-style: none;
+  max-width: 100%;
 }
 
 /* Forms
@@ -373,8 +373,4 @@ ul {
 
 li {
   list-style: none;
-}
-
-img {
-  max-width: 100%;
 }
