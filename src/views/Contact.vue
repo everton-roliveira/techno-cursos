@@ -1,9 +1,29 @@
 <template>
   <div>
-    <h1>Contato</h1>
     <page-loading v-if="loading"></page-loading>
     <transition>
-      <div v-if="data">{{data}}</div>
+      <div v-if="data">
+        <div>
+          <header class="header-page">
+            <h1 class="header-page__title">{{data.title}}</h1>
+            <p class="header-page__description">{{data.description}}</p>
+          </header>
+          <div class="contact-us">
+            <p class="contact">
+              <b>Email:</b>
+              {{data.contact.email}}
+            </p>
+            <p class="contact">
+              <b>Telefone:</b>
+              {{data.contact.phone}}
+            </p>
+            <p class="contact">
+              <b>Endereço:</b>
+              {{data.contact.address}}
+            </p>
+          </div>
+        </div>
+      </div>
     </transition>
   </div>
 </template>
@@ -20,5 +40,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.contact-us {
+  .contact {
+    margin-bottom: 10px;
+    @include font-size(x-big);
+  }
+}
 </style>
