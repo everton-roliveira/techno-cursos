@@ -16,20 +16,17 @@ export default {
 </script>
 <style lang="scss">
 body {
+  @include font-family("primary");
   margin: 0;
   padding: 0;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  color: #234;
+  color: color(brand, secondary);
 }
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 a {
-  font-weight: bold;
+  @include font-weight(bold);
   text-decoration: none;
-  color: #234;
+  color: color(brand, secondary);
+  &.router-link-active {
+    color: color(brand, primary);
+  }
 }
 </style>
