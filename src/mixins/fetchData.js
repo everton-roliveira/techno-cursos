@@ -12,8 +12,8 @@ export default {
       fetch(`http://localhost:3000${url}`)
         .then(r => r.json())
         .then(r => {
-          this.data = r;
           setTimeout(() => {
+            this.data = r;
             this.loading = false;
           }, 1000)
         });
