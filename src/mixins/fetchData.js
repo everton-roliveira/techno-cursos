@@ -15,7 +15,7 @@ export default {
           this.data = r;
           setTimeout(() => {
             this.loading = false;
-          }, 1500)
+          }, 1000)
         });
     }
   }
