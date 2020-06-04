@@ -22,5 +22,37 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+header {
+  background: color(brand, secondary);
+  a {
+    color: #ffffff;
+  }
+  nav {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-content: space-between;
+    padding: 20px;
+    .brand {
+      flex: 1;
+      a {
+        @include font-size(xx-big);
+        color: #ffffff;
+      }
+    }
+    ul {
+      li {
+        display: inline-block;
+        a {
+          padding: 0 10px;
+          margin-left: 10px;
+          &.router-link-active {
+            color: color(brand, primary);
+          }
+        }
+      }
+    }
+  }
+}
 </style>
