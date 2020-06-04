@@ -1,15 +1,11 @@
 .container {
-  max-width: 800px;
+  max-width: 992px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr minmax(200px, 400px);
   grid-gap: 30px;
-
-  @media screen and(max-width: 600px) {
-    display: block;
-  }
 }
