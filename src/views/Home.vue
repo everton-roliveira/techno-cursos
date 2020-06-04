@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>Home</h1>
-    <div v-if="loading">
-      <p>Carregando...</p>
-    </div>
+    <page-loading v-if="loading"></page-loading>
     <div v-else>{{data}}</div>
   </div>
 </template>
