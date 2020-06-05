@@ -10,13 +10,15 @@
           </header>
           <ul class="lessons">
             <h2 class="lessons__title">Aulas</h2>
-            <li
-              class="lessons__lesson"
+            <router-link
+              :to="{name: 'lesson', params: {lesson: lesson.id}}"
               v-for="lesson in data.lessons"
               :key="lesson.id"
-            >{{lesson.name}}</li>
+              tag="li"
+            >{{lesson.name}}</router-link>
           </ul>
         </div>
+        <router-view></router-view>
       </div>
     </transition>
   </div>
@@ -35,18 +37,25 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .lessons {
   .lessons__title {
     margin-bottom: 20px;
   }
 
-  &__lesson {
+  li {
     @include radius(small);
     @extend %elevation-cardMenu;
     padding: 20px;
     margin-bottom: 10px;
     letter-spacing: 0.12rem;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &.router-link-active {
+      @include font-weight(bold);
+      background: color(brand, primary);
+      color: #ffffff;
+    }
   }
 }
 </style>

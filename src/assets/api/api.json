@@ -129,7 +129,7 @@
       ]
     }
   ],
-  "aula": [
+  "lesson": [
     {
       "id": "css",
       "name": "CSS e Propriedades",

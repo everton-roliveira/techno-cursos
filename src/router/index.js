@@ -4,6 +4,7 @@ import Home from '../views/Home';
 import Contact from '../views/Contact';
 import Courses from '../views/Courses';
 import Course from '../views/Course';
+import Lesson from '../views/Lesson';
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,15 @@ const routes = [
     path: '/cursos/:course',
     name: 'course',
     component: Course,
-    props: true
+    props: true,
+    children: [
+      {
+        path: ':lesson',
+        name: 'lesson',
+        component: Lesson,
+        props: true
+      }
+    ]
   }
 ]
 
