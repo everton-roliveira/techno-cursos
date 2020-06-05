@@ -1,9 +1,19 @@
 <template>
   <div>
-    <h1>Cursos</h1>
     <page-loading v-if="loading"></page-loading>
     <transition>
-      <div v-if="data">{{data}}</div>
+      <div v-if="data" class="content">
+        <header class="header-page">
+          <h1 class="header-page__title">Sobre a {{data.title}}</h1>
+          <p class="header-page__description">{{data.description}}</p>
+        </header>
+        <ul class="courses">
+          <li class="courses__course" v-for="course in data.courses" :key="course.id">
+            <h2>{{course.name}} - {{course.totalLessons}} | {{course.hours}} horas</h2>
+            <p>{{course.description}}</p>
+          </li>
+        </ul>
+      </div>
     </transition>
   </div>
 </template>
@@ -20,5 +30,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.courses {
+  &__course {
+    margin-bottom: 30px;
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
 </style>
