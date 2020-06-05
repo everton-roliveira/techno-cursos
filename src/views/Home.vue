@@ -10,7 +10,7 @@
           </header>
           <router-link tag="button" class="btn btn__big" to="/cursos">Cursos</router-link>
           <div class="ratings">
-            <h2>Avaliações</h2>
+            <h2 class="ratings__title">Avaliações</h2>
             <ul>
               <li class="ratings__rating" v-for="rating in data.ratings" :key="rating.id">
                 <p class="ratings__rating__name">{{rating.name}}</p>
@@ -42,6 +42,9 @@ export default {
 }
 
 .ratings {
+  &__title {
+    margin-bottom: 20px;
+  }
   &__rating {
     margin-bottom: 20px;
     &__name {
