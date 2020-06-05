@@ -9,7 +9,11 @@
         </header>
         <ul class="courses">
           <li class="courses__course" v-for="course in data.courses" :key="course.id">
-            <h2>{{course.name}} - {{course.totalLessons}} | {{course.hours}} horas</h2>
+            <h2>
+              <router-link
+                :to="{name: 'course', params: {course: course.id}}"
+              >{{course.name}} - {{course.totalLessons}} | {{course.hours}} horas</router-link>
+            </h2>
             <p>{{course.description}}</p>
           </li>
         </ul>
